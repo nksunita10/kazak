@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazak</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Body reset */
+        body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+        }
+        /* Video background */
+        .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+        }
+        /* Overlay */
+        .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: -1;
+        }
+        /* Content styling */
+        .content {
+        position: relative;
+        z-index: 1;
+        padding:20px 50px;
+        color: white;
+            }
+
+        /* Example image styling */
+        /* .content img {
+        max-width: 300px;
+        height: auto; 
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        } */
+
+        /* Navigation styling */
+        #navlist li {
+        list-style: none;
+        margin-bottom: 8px;
+        }
+
+        #navlist li a {
+        color: #fff;
+        text-decoration: none;
+        }
+
+        #navlist li a:hover {
+        text-decoration: underline;
+        }
+
+        /* Header */
+        #header h1 {
+        color: #fff;
+        margin-bottom: 30px;
+        }
+
+        /* Footer */
+        #footer {
+        margin-top: 50px;
+        color: #fff;
+        font-size: 12px;
+        }
+        .navbar-light{
+        background-color: #1413136b;
+        }
+        .navbar-light a{
+        color: #fff;
+        }
+        .navbar-light a:hover{
+        color: #fff;
+        }
+        .navbar-light a.nav-link.active{
+        color: #fff;
+        }
+        .nav-link {
+            color: #fff !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus,
+        .nav-link.active {
+            color: #fff !important;
+        }
+        .uniform-img {
+            width: 300px;        /* fixed width for consistency */
+            height: auto;       /* fixed height */
+            object-fit: cover;   /* crops nicely while maintaining proportions */
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        /* Center everything nicely */
+        #home {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background video -->
+    <video autoplay muted loop class="video-background">
+        <source src="Kazak-vid.mp4" type="video/mp4">
+    </video>
+    <!-- Overlay -->
+    <div class="overlay"></div>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">KAZAK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#author">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Author</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Future</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Scrollable content -->
+    <div class="content container-fluid">
+        <!-- Sidebar + Main Content -->
+        <div id="home" class="container mt-5">
+            <div class="row justify-content-center align-items-center text-center g-4">     
+                <!-- Left Image -->
+                <div class="col-md-4 d-flex justify-content-center">
+                    <img src="kazak1.png" alt="Kazak" class="img-fluid uniform-img">
+                </div>
+                <!-- Center Content -->
+                <div class="col-md-4 text-center">
+                    <img src="author.jpg" alt="Buck Jones" class="img-fluid uniform-img mb-3 mx-auto d-block">
+                    <h1 id="KAZAK">Buck Jones</h1>
+                    <h2><a href="#" style="color: #fff; text-decoration: none;">Author</a></h2>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-md-4 d-flex justify-content-center">
+                    <img src="kazak.png" alt="Kazak" class="img-fluid uniform-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="row"> 
+            <!-- Book Slider -->
+            <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-inner container">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 text-center">
+                                <img src="book-cover.jpg" alt="Book 1" class="book-img">
+                            </div>
+                            <div class="col-md-7 book-content">
+                                <h3>Miller Homes II: Five Years Later</h3>
+                                <p>
+                                Miller Homes II: Five Years Later is a compelling narrative that delves into life in a low-income housing community known as Miller Homes 1. The story follows Bertha, a woman in her early thirties who becomes an activist striving to improve living conditions and safety.
+                                </p>
+                                <button class="btn btn-success">Read More</button>
+                                <p class="mt-4 mb-0">Grab a copy now</p>
+                                <button class="btn btn-primary">Click Here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 text-center">
+                                <img src="book-cover.jpg" alt="Book 2" class="book-img">
+                            </div>
+                            <div class="col-md-7 book-content">
+                                <h3>I AM KAZAK</h3>
+                                <p>
+                                I had a dream one night. I was in a fog when I saw a flickering light from a campfire... His name was Kazak and this is the first part of what he told me. He started life as a simple man who loved his journey and his beloved Mara.
+                                </p>
+                                <button class="btn btn-success">Read More</button>
+                                <p class="mt-4 mb-0">Grab a copy now</p>
+                                <button class="btn btn-primary">Click Here</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 text-center">
+                                <img src="book-cover.jpg" alt="Book 3" class="book-img">
+                            </div>
+                            <div class="col-md-7 book-content">
+                                <h3>Vindicator: The Humans Breakout</h3>
+                                <p>
+                                The Vindicator in orbit over the Earth… A thrilling story about the struggle for survival, courage, and hope beyond the stars.
+                                </p>
+                                <button class="btn btn-success">Read More</button>
+                                <p class="mt-4 mb-0">Grab a copy now</p>
+                                <button class="btn btn-primary">Click Here</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+
+            <section id="about" class="py-5 text-light">
+                <div class="container text-center">
+                    <!-- Section Title -->
+                    <h2 class="display-4 fw-bold text-uppercase mb-4" style="letter-spacing: 4px; text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;">
+                    Biography
+                    </h2>
+
+                    <!-- Horizontal Line -->
+                    <div class="mx-auto mb-5" style="width: 120px; height: 3px; background-color: #fff;"></div>
+
+                    <div class="row align-items-center justify-content-center">
+                        <!-- Image -->
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <img src="author.jpg"
+                                alt="Charles Feggans" class="img-fluid rounded shadow-lg">
+                        </div>
+
+                        <!-- Text -->
+                        <div class="col-md-7 text-start text-light">
+                            <p>Buck Jones is more than just a name; he is a storyteller, a visionary, and a creator who has spent decades inspiring readers with his imagination and literary craft. Born with an insatiable curiosity and an enduring love for stories, Buck Jones grew up surrounded by books, myths, and legends that sparked his fascination with the human experience, adventure, and the endless possibilities of the mind. From an early age, he exhibited a natural talent for observation, noting the world around him with precision and empathy—a skill that would later define his writing style.</p>
+
+                            <p>Jones’s writing is deeply personal yet universally relatable. His narratives often explore the intersection of reality and imagination, challenging readers to think beyond conventional limits. With a keen understanding of human emotions, he crafts characters who are multidimensional, flawed, yet inherently relatable. His protagonists often embark on journeys—both physical and metaphorical—that mirror the struggles, triumphs, and inner growth experienced by people in their everyday lives.</p>
+                            <!-- Author Name -->
+                            <h3 class="fw-bold text-center mt-4" style="text-shadow: rgba(0,0,0,0.4) 0px 4px 5px;">
+                            Buck Jones
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <div id="footer" class="mt-4">
+                <p>&copy; 2025 Buck's Book Store</p>
+            </div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
